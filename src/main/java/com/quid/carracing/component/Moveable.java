@@ -4,9 +4,8 @@ import java.util.Random;
 
 public class Moveable {
 
-    private static final Random random = new Random();
-
     public static boolean isMove() {
+        Random random = new Random();
         return random.nextInt(10) >= 4;
     }
 }
