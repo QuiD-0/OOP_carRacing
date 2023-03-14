@@ -15,8 +15,8 @@ public class ReaderTest {
         String input = "jay,juniq,junny,jureung\n";
         System.setIn(new ByteArrayInputStream(input.getBytes()));
         Scanner scanner = new Scanner(System.in);
-        Reader reader = new Reader(scanner);
-        List<String> names = reader.readName();
+        Register reader = new Register(scanner);
+        List<String> names = reader.racingCar();
 
         Assertions.assertEquals(names.size(), 4);
     }
@@ -27,8 +27,8 @@ public class ReaderTest {
         String input = "5\n";
         System.setIn(new ByteArrayInputStream(input.getBytes()));
         Scanner scanner = new Scanner(System.in);
-        Reader reader = new Reader(scanner);
-        int count = reader.readInt();
+        Register reader = new Register(scanner);
+        int count = reader.raceCount();
 
         Assertions.assertEquals(count, 5);
     }

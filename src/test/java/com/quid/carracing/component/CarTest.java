@@ -10,7 +10,7 @@ public class CarTest {
     @Test
     @DisplayName("자동차 생성")
     public void makeCarTest() {
-        List<String> names = List.of("jay", "juniq", "junny", "jureung");
+        List<String> names = List.of("제이", "주니크", "주니", "쿠릉");
 
         List<Car> cars = Car.create(names);
 
@@ -20,7 +20,7 @@ public class CarTest {
     @Test
     @DisplayName("자동차 이동")
     public void moveCarTest() {
-        List<String> names = List.of("jay", "juniq", "junny", "jureung");
+        List<String> names = List.of("제이", "주니크", "주니", "쿠릉");
         List<Car> cars = Car.create(names);
         Car car = cars.get(0);
 

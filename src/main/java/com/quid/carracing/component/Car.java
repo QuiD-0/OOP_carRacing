@@ -9,6 +9,7 @@ public class Car {
 
     private Car(String name) {
         this.name = name;
+        CarValidator.validate(this);
     }
 
     public static List<Car> create(List<String> names) {

@@ -1,22 +1,23 @@
 package com.quid.carracing;
 
 import com.quid.carracing.component.Car;
-import com.quid.carracing.component.Printer;
+import com.quid.carracing.component.Announcer;
 import com.quid.carracing.component.Race;
 import com.quid.carracing.component.RaceResult;
-import com.quid.carracing.component.Reader;
+import com.quid.carracing.component.Register;
 import java.util.List;
 
 public class CarRacingApplication {
 
     public static void main(String[] args) {
-        Reader input = new Reader();
-        List<String> names = input.readName();
+        Register register = Register.create();
+        List<String> names = register.racingCar();
+        int count = register.raceCount();
         List<Car> cars = Car.create(names);
-        int count = input.readInt();
+
         Race race = Race.ready(cars, count);
         RaceResult result = race.start();
-        Printer.printWinner(result);
+        Announcer.announceWinner(result);
     }
 
 }
