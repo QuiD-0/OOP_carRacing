@@ -2,21 +2,20 @@ package com.quid.carracing.component;
 
 import java.io.ByteArrayInputStream;
 import java.util.List;
+import java.util.Scanner;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 public class ReaderTest {
 
-    private Reader reader;
-
     @Test
     @DisplayName("이름 입력")
     public void inputNameTest() {
         String input = "jay,juniq,junny,jureung\n";
         System.setIn(new ByteArrayInputStream(input.getBytes()));
-
-        reader = new Reader();
+        Scanner scanner = new Scanner(System.in);
+        Reader reader = new Reader(scanner);
         List<String> names = reader.readName();
 
         Assertions.assertEquals(names.size(), 4);
@@ -27,8 +26,8 @@ public class ReaderTest {
     public void inputTryTest(){
         String input = "5\n";
         System.setIn(new ByteArrayInputStream(input.getBytes()));
-
-        reader = new Reader();
+        Scanner scanner = new Scanner(System.in);
+        Reader reader = new Reader(scanner);
         int count = reader.readInt();
 
         Assertions.assertEquals(count, 5);

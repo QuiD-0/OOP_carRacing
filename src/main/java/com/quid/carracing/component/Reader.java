@@ -5,18 +5,20 @@ import java.util.Scanner;
 
 public class Reader {
 
-    public List<String> readName() {
-        String input;
-        try (Scanner scanner = new Scanner(System.in)) {
-            input = scanner.nextLine();
-        }
+    private final Scanner scanner;
 
-        return List.of(input.split(","));
+    public Reader(Scanner scanner) {
+        this.scanner = scanner;
+    }
+    public Reader(){
+        this.scanner = new Scanner(System.in);
+    }
+
+    public List<String> readName() {
+        return List.of(scanner.nextLine().split(","));
     }
 
     public int readInt() {
-        try (Scanner scanner = new Scanner(System.in)) {
-            return scanner.nextInt();
-        }
+        return scanner.nextInt();
     }
 }
