@@ -4,13 +4,11 @@ import java.util.List;
 
 public class Announcer {
 
-    public static void print(List<Car> car) {
-        car.forEach(Announcer::printPosition);
+    public static void announceRace(List<Car> cars) {
+        for (Car car : cars) {
+            System.out.println(car.name() + " : " + "-".repeat(car.position()));
+        }
         System.out.println();
-    }
-
-    private static void printPosition(Car car) {
-        System.out.println(car.name() + " : " + "-".repeat(car.position()));
     }
 
     public static void announceWinner(RaceResult result) {

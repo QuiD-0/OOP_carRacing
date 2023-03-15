@@ -14,7 +14,7 @@ public class PrinterTest {
         IntStream.range(0, 5)
             .forEach(i -> car.forEach(Car::move));
 
-        Announcer.print(car);
+        Announcer.announceRace(car);
     }
 
 }

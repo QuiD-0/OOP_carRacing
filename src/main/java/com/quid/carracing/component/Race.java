@@ -21,7 +21,7 @@ public class Race {
         IntStream.range(0, count)
             .forEach(i -> {
                 cars.forEach(Car::move);
-                Announcer.print(cars);
+                Announcer.announceRace(cars);
             });
         return RaceResult.of(cars);
     }

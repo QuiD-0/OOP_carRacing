@@ -11,9 +11,8 @@ public class CarRacingApplication {
 
     public static void main(String[] args) {
         Register register = Register.create();
-        List<String> names = register.racingCar();
+        List<Car> cars = register.racingCar();
         int count = register.raceCount();
-        List<Car> cars = Car.create(names);
 
         Race race = Race.ready(cars, count);
         RaceResult result = race.start();

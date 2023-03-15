@@ -16,9 +16,9 @@ public class ReaderTest {
         System.setIn(new ByteArrayInputStream(input.getBytes()));
         Scanner scanner = new Scanner(System.in);
         Register reader = new Register(scanner);
-        List<String> names = reader.racingCar();
+        List<Car> cars = reader.racingCar();
 
-        Assertions.assertEquals(names.size(), 4);
+        Assertions.assertEquals(cars.size(), 4);
     }
 
     @Test

@@ -19,8 +19,9 @@ public class Register {
         return new Register();
     }
 
-    public List<String> racingCar() {
-        return List.of(scanner.nextLine().split(","));
+    public List<Car> racingCar() {
+        List<String> names = List.of(scanner.nextLine().split(","));
+        return Car.create(names);
     }
 
     public int raceCount() {
