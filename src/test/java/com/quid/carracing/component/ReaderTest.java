@@ -12,7 +12,7 @@ public class ReaderTest {
     @Test
     @DisplayName("이름 입력")
     public void inputNameTest() {
-        String input = "jay,juniq,junny,jureung\n";
+        String input = "jay,juniq,junny,쿠릉\n";
         System.setIn(new ByteArrayInputStream(input.getBytes()));
         Scanner scanner = new Scanner(System.in);
         Register reader = new Register(scanner);

@@ -10,7 +10,7 @@ public class RaceTest {
     @Test
     @DisplayName("레이스 준비")
     public void makeRaceTest() {
-        List<Car> carList = Car.create(List.of("jay", "juniq", "junny", "jureung"));
+        List<Car> carList = Car.create(List.of("jay", "juniq", "junny", "쿠릉"));
         int count = 5;
 
         Assertions.assertNotNull(Race.ready(carList, count));
@@ -19,7 +19,7 @@ public class RaceTest {
     @Test
     @DisplayName("레이스 진행")
     public void startRaceTest(){
-        List<Car> carList = Car.create(List.of("jay", "juniq", "junny", "jureung"));
+        List<Car> carList = Car.create(List.of("jay", "juniq", "junny", "쿠릉"));
         int count = 5;
         Race race = Race.ready(carList, count);
 
