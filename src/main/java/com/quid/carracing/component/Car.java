@@ -1,5 +1,6 @@
 package com.quid.carracing.component;
 
+import java.util.Arrays;
 import java.util.List;
 
 public class Car {
@@ -12,8 +13,8 @@ public class Car {
         CarValidator.validate(this);
     }
 
-    public static List<Car> create(List<String> names) {
-        return names.stream().map(Car::new).toList();
+    public static List<Car> create(String names) {
+        return Arrays.stream(names.split(",")).map(Car::new).toList();
     }
 
     public void move() {

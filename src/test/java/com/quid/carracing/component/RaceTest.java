@@ -10,18 +10,20 @@ public class RaceTest {
     @Test
     @DisplayName("레이스 준비")
     public void makeRaceTest() {
-        List<Car> carList = Car.create(List.of("jay", "juniq", "junny", "쿠릉"));
+        String names = "제이,주니크,주니,쿠릉";
+        List<Car> cars = Car.create(names);
         int count = 5;
 
-        Assertions.assertNotNull(Race.ready(carList, count));
+        Assertions.assertNotNull(Race.ready(cars, count));
     }
 
     @Test
     @DisplayName("레이스 진행")
     public void startRaceTest(){
-        List<Car> carList = Car.create(List.of("jay", "juniq", "junny", "쿠릉"));
+        String names = "제이,주니크,주니,쿠릉";
+        List<Car> cars = Car.create(names);
         int count = 5;
-        Race race = Race.ready(carList, count);
+        Race race = Race.ready(cars, count);
 
         Assertions.assertDoesNotThrow(race::start);
     }

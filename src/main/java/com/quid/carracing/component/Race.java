@@ -13,8 +13,8 @@ public class Race {
         this.count = count;
     }
 
-    public static Race ready(List<Car> carList, int count) {
-        return new Race(carList, count);
+    public static Race ready(List<Car> cars, int count) {
+        return new Race(cars, count);
     }
 
     public RaceResult start() {

@@ -1,7 +1,6 @@
 package com.quid.carracing.component;
 
 import java.io.ByteArrayInputStream;
-import java.util.List;
 import java.util.Scanner;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
@@ -12,13 +11,13 @@ public class ReaderTest {
     @Test
     @DisplayName("이름 입력")
     public void inputNameTest() {
-        String input = "jay,juniq,junny,쿠릉\n";
+        String input = "제이,주니크,주니,쿠릉\n";
         System.setIn(new ByteArrayInputStream(input.getBytes()));
         Scanner scanner = new Scanner(System.in);
-        Register reader = new Register(scanner);
-        List<Car> cars = reader.racingCar();
+        Reader reader = new Reader(scanner);
+        String names = reader.readString();
 
-        Assertions.assertEquals(cars.size(), 4);
+        Assertions.assertEquals(names.length(), 12);
     }
 
     @Test
@@ -27,8 +26,8 @@ public class ReaderTest {
         String input = "5\n";
         System.setIn(new ByteArrayInputStream(input.getBytes()));
         Scanner scanner = new Scanner(System.in);
-        Register reader = new Register(scanner);
-        int count = reader.raceCount();
+        Reader reader = new Reader(scanner);
+        int count = reader.readInt();
 
         Assertions.assertEquals(count, 5);
     }
